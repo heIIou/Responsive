@@ -1,4 +1,4 @@
 import './main.scss';
 
 
-const a = '2';
+$('h1').hide();
