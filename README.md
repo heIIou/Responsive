@@ -1,2 +1,3 @@
 # Base_project_build
-# Базовая сборка
+Команды для запуска:
+npm run start - запускает dev-server для разработки локально
