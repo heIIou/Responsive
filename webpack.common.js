@@ -18,55 +18,50 @@ module.exports = {
 
     module: {
         rules: [{
-                test: /\.css$/,
-                use: [
-                     MiniCssExtractPlugin.loader,
-                    "css-loader"
-                ]
-            },
-            {
-                test: /\.js?$/,
-                exclude: /node_modules/,
-                use: [
-                    'babel-loader',
-                    'eslint-loader'
-                ]
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        outputPath: 'img/'
-                    }
-                }]
-            },
-            {
-                test: /\.(eot|eot|otf|ttf|woff|woff2)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        outputPath: 'font/'
-                    }
-                }]
-            },
-            {
-                test: /\.scss$/,
-                use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                },{
-                    loader: 'css-loader',
-                }, {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: [
-                            require('autoprefixer')
-                        ]
-                    }
-                }, {
-                    loader: 'sass-loader'
-                }]
-            }
+            test: /\.css$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader'
+            ]
+        },
+        {
+            test: /\.js?$/,
+            exclude: /node_modules/,
+            use: [
+                'babel-loader',
+                'eslint-loader'
+            ]
+        },
+        {
+            test: /\.(png|jpg|gif|svg)$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'img/'
+                }
+            }]
+        },
+        {
+            test: /\.(eot|eot|otf|ttf|woff|woff2)$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'font/'
+                }
+            }]
+        },
+        {
+            test: /\.scss$/,
+            use: [{
+                loader: MiniCssExtractPlugin.loader,
+            },{
+                loader: 'css-loader'
+            }, {
+                loader: 'postcss-loader'
+            }, {
+                loader: 'sass-loader'
+            }]
+        }
         ],
     },
     plugins: [
