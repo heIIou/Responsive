@@ -1,0 +1,31 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+
+    "rules": {
+        "indent": [2, 4],
+        "func-style": [2, "declaration", { "allowArrowFunctions": true }],
+        "no-unused-vars": 0,
+        "quotes": [2, "single"],
+        "semi": [2, "always"],
+        "strict": 0
+    },
+
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "arrowFunctions": true,
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        }
+    }
+}
