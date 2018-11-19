@@ -1,0 +1,109 @@
+@import "../../common/arrow.scss";
+
+.intro {
+  display: flex;
+  width: 100%;
+  min-height: 575px;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(119deg, $intro-gradient-light, $intro-gradient-dark);
+
+  @include respond-to(XS) {
+    min-height: 550px;
+  }
+
+  @include respond-to(mobile) {
+    min-height: 348px;
+  }
+
+  @include respond-to(micro) {
+    max-height: calc(348px / 2);
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 85%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    @include respond-to(mobile) {
+      transform: scale(.65);
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    width: 100%;
+    font-family: $montserrat;
+    font-size: 2.92rem;
+    color: #fff;
+
+    @include respond-to(mobile) {
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      line-height: 2.25rem;
+    }
+
+    @include respond-to(micro) {
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      transform: scale(1.5);
+    }
+  }
+
+  &__second-row {
+    display: flex;
+    max-width: 62%;
+    width: 100%;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+
+    @include respond-to(XS) {
+      max-width: 75%;
+    }
+
+    @include respond-to(mobile) {
+      max-width: 75%;
+    }
+
+    @include respond-to(micro) {
+      max-width: 80%;
+      transform: scale(1.5);
+    }
+  }
+
+  &__link {
+    display: flex;
+    width: auto;
+    font-family: $montserrat;
+    font-size: 34px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, .5);
+
+    @include respond-to(mobile) {
+      font-size: 125%;
+    }
+
+    @include respond-to(micro) {
+      font-size: 100%;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    font-size: 36px;
+    color: #fff;
+
+    @include respond-to(mobile) {
+      font-size: 85%;
+    }
+
+    @include respond-to(micro) {
+      font-size: 75%;
+    }
+  }
+}
