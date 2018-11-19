@@ -1,0 +1,168 @@
+.gallery {
+  display: flex;
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+  }
+
+  &__first-row {
+    display: flex;
+    width: 100%;
+    max-height: 245px;
+    height: 100%;
+
+    @include respond-to(XS) {
+      max-height: 180px;
+    }
+
+    @include respond-to(mobile) {
+      max-height: 150px;
+    }
+
+    @include respond-to(micro) {
+      max-height: 70px;
+    }
+  }
+
+  &__second-row {
+    display: flex;
+    width: 100%;
+    max-height: 290px;
+    height: 100%;
+
+    @include respond-to(XS) {
+      max-height: 200px;
+    }
+
+    @include respond-to(mobile) {
+      flex-flow: column nowrap;
+      min-height: calc(550px * 3);
+    }
+
+    @include respond-to(micro) {
+      flex-flow: column nowrap;
+      min-height: calc(550px / 2 * 3);
+    }
+  }
+
+  &__text {
+    display: flex;
+    width: 75%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: $gallery-text-bg;
+
+    &.text {
+      width: auto;
+      font-family: $montserrat;
+      font-size: 30px;
+      color: $gallery-text;
+      background-color: none;
+
+      @include respond-to(XS) {
+        font-size: 20px;
+      }
+
+      @include respond-to(mobile) {
+        font-size: 13px;
+      }
+
+      @include respond-to(micro) {
+        font-size: 7px;
+      }
+    }
+  }
+
+  &__arrow__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.pink {
+      width: 25%;
+      height: 100%;
+      background-color: $gallery-arrow-bg-pink;
+    }
+
+    &.blue {
+      width: calc(100% / 3);
+      height: 100%;
+      background-color: $gallery-arrow-bg-blue;
+
+      @include respond-to(mobile) {
+        width: 100%;
+        height: calc(100% / 3);
+      }
+
+      @include respond-to(micro) {
+        width: 100%;
+        height: calc(100% / 3);
+      }
+    }
+  }
+
+  &__arrow {
+    font-size: 50px;
+    color: #fff;
+
+    @include respond-to(XS) {
+      font-size: 38px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: 30px;
+    }
+
+    @include respond-to(micro) {
+      font-size: 15px;
+    }
+
+    &.small {
+      font-size: 35px;
+
+      @include respond-to(XS) {
+        font-size: 25px;
+      }
+
+      @include respond-to(mobile) {
+        font-size: 90px;
+      }
+
+      @include respond-to(micro) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    width: calc(100% / 3);
+    height: 100%;
+
+    &.image-girl {
+      background: url(./images/gallery/girl.jpg) center;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+    }
+
+    &.image-brigde {
+      background: url(./images/gallery/bridge.jpg) center;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+    }
+
+    @include respond-to(mobile) {
+      width: 100%;
+      height: calc(100% / 3);
+    }
+
+    @include respond-to(micro) {
+      width: 100%;
+      height: calc(100% / 3);
+    }
+  }
+}
