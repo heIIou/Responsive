@@ -1,6 +1,9 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": [],
+  "ignoreFiles": "src/styles/**",
+  "plugins": [
+    "stylelint-scss"
+  ],
   "rules": {
     "rule-empty-line-before": "always",
     "number-leading-zero": "never",
@@ -13,5 +16,7 @@
     "no-empty-source": null,
     "comment-whitespace-inside": null,
     "declaration-block-no-redundant-longhand-properties": null,
-  }
+    "scss/dollar-variable-pattern": "^foo",
+    "scss/selector-no-redundant-nesting-selector": true
+  },
 }
