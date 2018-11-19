@@ -1,0 +1,219 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: $intro-gradient-light;
+}
+
+.globalWrapper {
+  margin: 0 auto;
+  display: flex;
+  max-width: 1024px;
+  width: 100%;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-self: flex-start;
+  background-color: $ebeb;
+
+  @include respond-to(mobile) {
+    max-width: 640px;
+  }
+
+  @include respond-to(micro) {
+    max-width: 320px;
+  }
+}
+
+.navigation {
+  display: flex;
+  width: 100%;
+  height: 90px;
+  background-color: $background-dark;
+
+  @include respond-to(mobile) {
+    height: 74px;
+  }
+
+  @include respond-to(micro) {
+    height: 37px;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+  }
+
+  &__list {
+    z-index: 1000;
+    margin-left: 50px;
+    display: flex;
+    max-width: 640px;
+    width: 100%;
+    height: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond-to(mobile) {
+      margin-left: 0;
+      margin-top: 74px;
+      flex-flow: column wrap;
+      justify-content: space-around;
+      max-width: 640px;
+      width: 100%;
+      min-height: 280px;
+      transform: scale(1, 0);
+      transform-origin: center top;
+      transition: all .3s ease-in;
+    }
+
+    @include respond-to(micro) {
+      margin-left: 0;
+      margin-top: 37px;
+      flex-flow: column wrap;
+      justify-content: space-around;
+      max-width: 640px;
+      width: 100%;
+      min-height: 280px;
+      transform: scale(1, 0);
+      transform-origin: center top;
+      transition: all .3s ease-in;
+    }
+
+    &.active {
+      margin: 0;
+      position: absolute;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-around;
+      max-width: 640px;
+      width: 100%;
+      min-height: 280px;
+      background-color: $background-dark;
+      overflow: hidden;
+
+      @include respond-to(mobile) {
+        margin-top: 74px;
+        transform-origin: center top;
+        transform: scale(1, 1);
+        transition: all .15s ease-out;
+      }
+
+      @include respond-to(micro) {
+        margin-top: 37px;
+        transform-origin: center top;
+        transform: scale(1, 1);
+        transition: all .15s ease-out;
+      }
+    }
+
+    &__item {
+      position: relative;
+      display: flex;
+      list-style: none;
+
+      @include respond-to(mobile) {
+        margin-left: 70px;
+        width: 100%;
+        justify-content: flex-start;
+
+        &:after {
+          margin-left: -35px;
+          position: absolute;
+          bottom: -20px;
+          display: flex;
+          align-self: flex-end;
+          width: 110%;
+          height: 1px;
+          background-color: black;
+          content: "";
+        }
+      }
+
+      @include respond-to(micro) {
+        margin-left: 65px;
+        width: 100%;
+        justify-content: flex-start;
+
+        &:after {
+          margin-left: -35px;
+          position: absolute;
+          bottom: -20px;
+          display: block;
+          width: 110%;
+          height: 1px;
+          background-color: black;
+          content: "";
+        }
+      }
+    }
+
+    &__link {
+      display: flex;
+      color: $ebeb;
+      font-family: $montserrat;
+      font-size: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include respond-to(micro) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    margin-left: 35px;
+    display: none;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    font-family: $montserrat;
+    font-size: 24px;
+    color: $ebeb;
+
+    @include respond-to(micro) {
+      display: flex;
+      margin-left: 0;
+      transform: scale(.5);
+    }
+
+    @include respond-to(mobile) {
+      display: flex;
+    }
+  }
+
+  &__button {
+    z-index: 1001;
+    position: absolute;
+    right: 0;
+    display: none;
+    width: 83px;
+    max-height: 83px;
+    height: 100%;
+    align-self: center;
+    justify-content: center;
+    border: none;
+    background: url(images/toggle-button.jpg) center no-repeat;
+
+    @include respond-to(mobile) {
+      display: flex;
+    }
+
+    @include respond-to(micro) {
+      display: flex;
+      width: calc(83px / 2);
+      background-size: 100%;
+    }
+  }
+}
