@@ -1,0 +1,84 @@
+.article {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-flow: row wrap;
+
+  @include respond-to(mobile) {
+    justify-content: center;
+  }
+
+  @include respond-to(micro) {
+    justify-content: center;
+  }
+
+  &__first-column {
+    display: flex;
+    width: 40%;
+    flex-flow: row wrap;
+
+    @include respond-to(mobile) {
+      width: 85%;
+    }
+
+    @include respond-to(micro) {
+      width: 85%;
+    }
+  }
+
+  &__second-column {
+    display: flex;
+    width: 40%;
+    flex-flow: row wrap;
+
+    @include respond-to(mobile) {
+      display: none;
+    }
+
+    @include respond-to(micro) {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 50px 0 20px 0;
+    display: flex;
+    width: 90%;
+    height: auto;
+    font-family: $montserrat;
+    font-size: 30px;
+    color: $article-title;
+
+    @include respond-to(mobile) {
+      margin: 70px 0 40px 0;
+      font-size: 40px;
+      width: 85%;
+    }
+
+    @include respond-to(micro) {
+      margin: 70px 0 40px 0;
+      font-size: 30px;
+      width: 85%;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    font-family: $montserrat;
+    font-size: 14px;
+    line-height: 1.5rem;
+    color: $gallery-text-bg;
+
+    @include respond-to(mobile) {
+      font-size: 23px;
+      line-height: 2.5rem;
+    }
+
+    @include respond-to(micro) {
+      line-height: 2rem;
+      font-size: 17px;
+    }
+  }
+}
